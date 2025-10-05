@@ -32,7 +32,8 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
   useEffect(() => {
     (async () => {
       const _todos = (await axios.get(`${backendUrl}/todos`)).data;
-      _todos.sort((a: Todo, b: Todo) => a.todoText > b.todoText);
+      console.log(_todos);
+      _todos.sort((a: Todo, b: Todo) => a.todo > b.todo);
       setTodos(_todos);
     })();
   }, []);

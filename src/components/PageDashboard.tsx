@@ -12,7 +12,7 @@ export const PageDashboard = () => {
           return (
             <ul className="todo" key={i}>
               <li>
-                {todo.todoText}:{' '}
+                {todo.todo}:{' '}
                 <a target="_blank" href={todo.url}>
                   {todo.title} at {todo.company}
                 </a>

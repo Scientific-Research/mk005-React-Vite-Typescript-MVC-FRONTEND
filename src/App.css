@@ -37,6 +37,12 @@ body {
     }
   }
 
+  .pageDashboard {
+    a {
+      color: rgb(68, 186, 36);
+    }
+  }
+
   .pageJobs {
     .jobs {
       .job {

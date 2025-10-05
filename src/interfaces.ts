@@ -17,7 +17,7 @@ export interface Skill {
 }
 
 export interface Todo {
-  todoText: string;
+  todo: string;
   company: string;
   title: string;
   url: string;
