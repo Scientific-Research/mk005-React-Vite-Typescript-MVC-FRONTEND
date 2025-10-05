@@ -23,6 +23,7 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
       setJobs((await axios.get(`${backendUrl}/jobs`)).data);
     })();
   }, []);
+
   return (
     <AppContext.Provider
       value={{
