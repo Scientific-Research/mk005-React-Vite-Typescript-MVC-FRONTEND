@@ -27,7 +27,7 @@
 
 import { useContext } from 'react';
 import { AppContext } from '../appContext';
-import { Job } from '../interfaces';
+import { Job, Skill } from '../interfaces';
 
 export const PageJobs = () => {
   // const [jobs, setJobs] = useState<IJobs[]>([]); // without default value
@@ -48,22 +48,53 @@ export const PageJobs = () => {
   const { jobs } = useContext(AppContext);
 
   return (
-    <div className="pageJobs">
-      <h2>There are {jobs.length} jobs:</h2>
+    <div className="page pageJobs">
       <div className="jobs">
-        {jobs.map((job) => (
-          <div className="job" key={job.id}>
-            <>
-              <a href={job.url} target="_blank">
-                <h2>{job.title}</h2>
-              </a>
-              <h4>{job.company}</h4>
-              <p className="description">{job.description}</p>
-              <p className="skillList">{job.skillList}</p>
-              <p className="todo">{job.todo}</p>
-            </>
-          </div>
-        ))}
+        <h2>There are {jobs.length} jobs:</h2>
+        {jobs.map((job: Job) => {
+          return (
+            <div className="job" key={job.id}>
+              <div className="title">
+                <a href={job.url} target="_blank">
+                  {job.title}
+                </a>
+              </div>
+              <div className="company">{job.company}</div>
+              <div className="todo">NEXT TASK: {job.todo}</div>
+              <div className="description">{job.description}</div>
+              <div className="skills">
+                {job.skills.map((skill: Skill) => {
+                  return (
+                    <>
+                      {skill.name ? (
+                        <div className="skill found">
+                          <div className="name">
+                            <a href={skill.url} target="_blank">
+                              {skill.name}
+                            </a>{' '}
+                            - {skill.description}
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="skill missing">
+                          <div className="name">
+                            <a
+                              href={`https://www.google.com/search?q=${skill.idCode}+web+development`}
+                              target="_blank"
+                            >
+                              {skill.idCode}
+                            </a>{' '}
+                            - ADD TO BACKEND: \src\data\skillInfos.json
+                          </div>
+                        </div>
+                      )}
+                    </>
+                  );
+                })}
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
