@@ -43,10 +43,19 @@ body {
         background-color: #222;
         margin: 1rem 0;
         padding: 1rem;
+
+        .title {
+          a {
+            color: rgb(224, 219, 151);
+            font-size: larger;
+          }
+        }
+
         h2 {
           color: rgb(99, 171, 99);
           text-decoration: underline;
         }
+
         h4 {
           color: green;
           margin-bottom: 1rem;
@@ -58,16 +67,31 @@ body {
           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        .skillList {
-          color: yellow;
-          font-family: 'Courier New', Courier, monospace;
-          margin-bottom: 0.5rem;
+        .skills {
+          .skill {
+            font-family: 'Courier New', Courier, monospace;
+          }
+          .found {
+            color: green;
+            a {
+              color: rgb(114, 208, 114);
+            }
+          }
+          .missing {
+            color: red;
+            a {
+              color: rgb(210, 77, 77);
+            }
+          }
         }
 
         .todo {
-          color: tomato;
-          font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
-            sans-serif;
+          color: yellow;
+          background-color: #111;
+          padding: 0.4rem;
+          font-family: 'Courier New', Courier, monospace;
+          display: inline-block;
+          border-radius: 0.4rem;
         }
       }
     }
