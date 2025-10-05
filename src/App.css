@@ -38,6 +38,14 @@ body {
   }
 
   .pageDashboard {
+    .todos {
+      margin-left: 4rem;
+      margin-top: 1rem;
+    }
+
+    .todo {
+      margin-bottom: 0.5rem;
+    }
     a {
       color: rgb(68, 186, 36);
     }
