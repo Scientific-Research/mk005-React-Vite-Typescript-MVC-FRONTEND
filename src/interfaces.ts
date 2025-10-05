@@ -1,4 +1,4 @@
-export type Job = {
+export interface Job {
   id: number;
   title: string;
   company: string;
@@ -7,23 +7,25 @@ export type Job = {
   skillList: string;
   skills: Skill[];
   todo: string;
-};
+}
 
-export type Skill = {
+export interface Skill {
   idCode: string;
   name: string;
   url: string;
   description: string;
-};
+}
 
-export type Todo = {
+export interface Todo {
   todoText: string;
   company: string;
   title: string;
   url: string;
-};
+}
 
-export type TotaledSkill = {
+export interface TotaledSkill {
   skill: Skill;
   total: number;
-};
+  isOpen: boolean;
+  lookupInfoLink: string;
+}
